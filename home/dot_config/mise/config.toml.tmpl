@@ -1,7 +1,6 @@
 [settings]
 experimental = true
 
-{{- if (contains "termux" .chezmoi.homeDir) }}
 [tools]
 "aqua:helmfile/helmfile" = "latest"
 "aqua:fluxcd/flux2" = "latest"
@@ -13,4 +12,3 @@ experimental = true
 "aqua:kubernetes-sigs/kustomize" = "latest"
 "aqua:stern/stern" = "latest"
 "aqua:mitsuhiko/minijinja" = "latest"
-{{- end }}

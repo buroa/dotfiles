@@ -14,6 +14,10 @@ type -q brew && eval (brew shellenv)
 fish_add_path --global /opt/homebrew/opt/curl/bin
 fish_add_path --global /opt/homebrew/opt/gettext/bin
 
+if type -q python
+    fish_add_path --global $HOMEBREW_PREFIX/opt/python/libexec/bin
+end
+
 if type -q gdu
     fish_add_path --global $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
 end

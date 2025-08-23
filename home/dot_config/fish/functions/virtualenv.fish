@@ -1,6 +1,6 @@
 function venv --description "Create and activate a new virtual environment"
     echo "Creating virtual environment in "(pwd)"/.venv"
-    {{ lookPath "python3" }} -m venv .venv --upgrade-deps
+    python3 -m venv .venv --upgrade-deps
     source .venv/bin/activate.fish
 
     # Append .venv to the Git exclude file, but only if it's not

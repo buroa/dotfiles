@@ -40,7 +40,7 @@ style  = "bold bright-green"
 
 [python]
 disabled = false
-format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\]'
+format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
 symbol = " "
 
 [git_branch]

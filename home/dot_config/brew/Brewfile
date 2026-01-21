@@ -1,6 +1,7 @@
 tap "fluxcd/tap"
 tap "go-task/tap"
 tap "lance0/tap"
+brew "alfred"
 brew "atuin"
 brew "bash"
 brew "bat"

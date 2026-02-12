@@ -6,7 +6,6 @@ format = """\
   $username\
   $directory\
   $kubernetes\
-  $python\
   $git_branch\
   $git_commit\
   $git_state\
@@ -37,11 +36,6 @@ disabled = false
 symbol = "󱃾 "
 format = "[\\[$symbol$context \\($namespace\\)\\]]($style) "
 style  = "bold bright-green"
-
-[python]
-disabled = false
-format = '\[[${symbol}${pyenv_prefix}(${version})(\($virtualenv\))]($style)\] '
-symbol = " "
 
 [git_branch]
 disabled = false

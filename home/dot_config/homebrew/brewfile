@@ -91,8 +91,6 @@ brew "fluxcd/tap/flux", trusted: true
 brew "lance0/tap/ttl", trusted: true
 brew "terror/tap/just-lsp", trusted: true
 
-cargo "cargo-update"
-
 cask "1password"
 cask "1password-cli"
 cask "alfred"
@@ -117,32 +115,3 @@ cask "visual-studio-code"
 cask "vlc"
 cask "wifiman"
 cask "wireshark-app"
-
-krew "browse-pvc"
-krew "cert-manager"
-krew "ctx"
-krew "df-pv"
-krew "envsubst"
-krew "get-all"
-krew "klock"
-krew "kopiur/kopiur"
-krew "marvin"
-krew "netshoot/netshoot"
-krew "node-restart"
-krew "node-shell"
-krew "ns"
-krew "pv-migrate"
-krew "pv-mounter"
-krew "rook-ceph"
-krew "view-secret"
-krew "viewnode"
-krew "virt"
-
-mas "Maccy", id: 1527619437
-mas "MediaInfo", id: 510620098
-mas "Presentify", id: 1507246666
-mas "WireGuard", id: 1451685025
-mas "Xcode", id: 497799835
-mas "Xnip", id: 1221250572
-
-npm "@devcontainers/cli"

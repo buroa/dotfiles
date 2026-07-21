@@ -1,0 +1,12 @@
+{{- /* One of: macos, truenas, fedora, other. Prompted at init; derived for configs that predate the prompt. */ -}}
+{{- if hasKey . "machine" -}}
+{{- .machine -}}
+{{- else if eq .chezmoi.os "darwin" -}}
+macos
+{{- else if eq (index .chezmoi.osRelease "id") "fedora" -}}
+fedora
+{{- else if eq (index .chezmoi.osRelease "id") "truenas" -}}
+truenas
+{{- else -}}
+other
+{{- end -}}

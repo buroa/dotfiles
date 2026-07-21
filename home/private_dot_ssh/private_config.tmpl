@@ -2,7 +2,6 @@ LogLevel ERROR
 
 Host *
   AddKeysToAgent yes
-  IdentityAgent $SSH_AUTH_SOCK
   IdentityFile ~/.ssh/id_ed25519
   IdentityFile ~/.ssh/id_rsa
 {{- if (eq .chezmoi.os "darwin") }}

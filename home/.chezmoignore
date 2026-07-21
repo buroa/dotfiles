@@ -1,0 +1,13 @@
+{{- $machine := includeTemplate "machine" . -}}
+{{ if ne $machine "macos" }}
+.config/homebrew/brewfile
+{{ end }}
+{{ if ne $machine "truenas" }}
+.zshrc
+.zshenv
+{{ end }}
+{{ if eq $machine "truenas" }}
+.claude
+.codex
+.config/AGENTS.md
+{{ end }}

@@ -1,0 +1,15 @@
+{{- $default := "other" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $default = "macos" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   if eq (index .chezmoi.osRelease "id") "fedora" -}}
+{{-     $default = "fedora" -}}
+{{-   else if (index .chezmoi.osRelease "id") "truenas" -}}
+{{-     $default = "truenas" -}}
+{{-   end -}}
+{{- end -}}
+{{- $machine := promptChoiceOnce . "machine" "Machine" (list "macos" "fedora" "truenas" "other") $default -}}
+format: yaml
+data:
+  name: "Steven Kreitzer"
+  machine: {{ $machine | quote }}

@@ -1,0 +1,28 @@
+{{- $machine := includeTemplate "machine" . -}}
+{{- if eq $machine "truenas" }}
+# fish can't be the login shell here (sealed rootfs, not in /etc/shells), so
+# interactive sessions exec into it; `zsh` typed from fish still gets zsh.
+if [[ -z "$ZSH_EXECUTION_STRING" && "$(ps -p $PPID -o comm= 2>/dev/null)" != "fish" ]] && command -v fish >/dev/null; then
+    exec fish
+fi
+{{- end }}
+
+export ZSH="{{ .chezmoi.homeDir }}/.oh-my-zsh"
+ZSH_THEME=""
+[[ -r $ZSH/oh-my-zsh.sh ]] && source $ZSH/oh-my-zsh.sh
+
+# Everything below is guaranteed by the mise config (installed via the
+# chezmoi mise-install hook) and reachable through the shims dir that
+# .zshenv puts on PATH, so no command existence checks are needed.
+eval "$(mise activate zsh)"
+
+export GPG_TTY=$(tty)
+
+watch() {
+    (( $# == 0 )) && return
+    command viddy --disable_auto_save --differences --interval 2 --shell zsh "$@"
+}
+
+eval "$(starship init zsh)"
+eval "$(zoxide init zsh)"
+eval "$(atuin init zsh --disable-up-arrow)"

@@ -1,5 +1,3 @@
 {{- /* machine = os-release id on Linux (fedora, truenas), else the OS name (darwin). */ -}}
 data:
   machine: {{ index .chezmoi.osRelease "id" | default .chezmoi.os | quote }}
-  name: "Steven Kreitzer"
-  email: "skre@skre.me"

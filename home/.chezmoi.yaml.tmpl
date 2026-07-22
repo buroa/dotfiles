@@ -8,7 +8,9 @@
 {{-     $machine = "darwin-work" -}}
 {{-   end -}}
 {{- end -}}
+{{- $name := promptStringOnce . "name" "Git name" "Steven Kreitzer" -}}
+{{- $email := promptStringOnce . "email" "Git email" "skre@skre.me" -}}
 data:
+  name: {{ $name | quote }}
+  email: {{ $email | quote }}
   machine: {{ $machine | quote }}
-  name: {{ promptStringOnce . "name" "Name" "Steven Kreitzer" | quote }}
-  email: {{ promptStringOnce . "email" "Email" "skre@skre.me" | quote }}

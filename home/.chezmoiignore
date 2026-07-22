@@ -1,12 +1,28 @@
-{{ if ne .machine "macos" }}
-.config/homebrew/brewfile
-{{ end }}
-{{ if ne .machine "truenas" }}
+# Per-machine selection. This is the single place that decides what exists or
+# runs on each machine; the content files and scripts themselves stay free of
+# machine conditionals. Entries are removed from the target on matching machines.
+# Directories are ignored whole (not just their one file) to avoid leaving empty
+# managed dirs behind.
+
+{{- if ne .machine "macos" }}
+.config/homebrew
+.config/fish/conf.d/10-homebrew.fish
+.chezmoiscripts/brew-bundle.sh
+{{- end }}
+
+{{- if not (or (eq .machine "truenas") (eq .machine "fedora")) }}
+.config/mise
+.chezmoiscripts/install-mise.sh
+.chezmoiscripts/mise-install.sh
+{{- end }}
+
+{{- if ne .machine "truenas" }}
 .zshrc
 .zshenv
-{{ end }}
-{{ if eq .machine "truenas" }}
+{{- end }}
+
+{{- if eq .machine "truenas" }}
 .claude
 .codex
-.config/AGENTS.md
-{{ end }}
+.config/agents
+{{- end }}

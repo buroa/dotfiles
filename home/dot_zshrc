@@ -1,4 +1,3 @@
-{{- if eq .machine "truenas" -}}
 # fish isn't in /etc/shells here (sealed rootfs), so the login shell (zsh) execs
 # into fish for interactive use. `zsh` typed from within fish still gets a real zsh.
 if [[ -z "$ZSH_EXECUTION_STRING" && "$(ps -p $PPID -o comm= 2>/dev/null)" != "fish" ]] && command -v fish >/dev/null; then
@@ -11,4 +10,3 @@ eval "$(mise activate zsh)"
 eval "$(starship init zsh)"
 eval "$(zoxide init zsh)"
 eval "$(atuin init zsh --disable-up-arrow)"
-{{- end }}

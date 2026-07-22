@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 # fish_plugins hash: {{ include "dot_config/fish/fish_plugins" | sha256sum }}
 set -euo pipefail
-# Sync the managed fisher plugin list whenever it changes. update-fisher sorts
-# after brew-bundle and mise-install, so fish already exists on first apply. No
-# fish (e.g. a minimal box) means no plugins to manage, so skip.
+# Sync the managed fisher plugin list whenever it changes. Runs on every machine
+# and sorts after the package hooks, so fish already exists (brew on macos, mise
+# elsewhere). No fish means no plugins to manage, so skip.
 fish="$(command -v fish || true)"
-for candidate in /opt/homebrew/bin/fish /usr/local/bin/fish "{{ .chezmoi.homeDir }}/.local/share/mise/shims/fish"; do
+for candidate in /opt/homebrew/bin/fish /usr/local/bin/fish "$HOME/.local/share/mise/shims/fish"; do
     [ -n "$fish" ] && break
     [ -x "$candidate" ] && fish="$candidate"
 done

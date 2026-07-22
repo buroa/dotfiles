@@ -1,12 +1,4 @@
-{{- $tools := dict -}}
-{{- if or (eq .machine "truenas") (eq .machine "fedora") -}}
-{{-   $tools = merge (deepCopy .mise.common) (index .mise .machine) -}}
-{{- end -}}
-[settings]
-{{- if $tools }}
-
 [tools]
-{{- range $tool, $version := $tools }}
+{{- range $tool, $version := merge (deepCopy .mise.common) (index .mise .machine) }}
 {{ $tool | quote }} = {{ $version | quote }}
-{{- end }}
 {{- end }}

@@ -1,0 +1,29 @@
+mise:
+  common:
+    atuin: latest
+    bat: latest
+    fd: latest
+    lsd: latest
+    neovim: latest
+    ripgrep: latest
+    sd: latest
+    yq: latest
+    zoxide: latest
+  truenas:
+    starship: latest
+    "aqua:fish-shell/fish-shell": latest
+    "aqua:autobrr/mkbrr": latest
+    "github:autobrr/go-mediainfo": latest
+  fedora:
+    aws-cli: latest
+    azure-cli: latest
+    claude: latest
+    codex: latest
+    gh: latest
+    go: latest
+    node: latest
+    npm: latest
+    python: latest
+    "github:dolthub/dolt": latest
+    "github:gastownhall/beads": latest
+    "github:gastownhall/gascity": latest

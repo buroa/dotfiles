@@ -147,5 +147,5 @@ brew:
     wifiman: cask
     wireshark-app: cask
   darwin-work:
-    globalprotect: cask
+    openconnect: brew
     slack: cask

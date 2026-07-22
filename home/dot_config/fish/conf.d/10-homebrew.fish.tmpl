@@ -19,27 +19,8 @@ fish_add_path --global $HOMEBREW_PREFIX/opt/curl/bin
 fish_add_path --global $HOMEBREW_PREFIX/opt/gettext/bin
 fish_add_path --global $HOMEBREW_PREFIX/opt/python/libexec/bin
 
-if type -q gdu
-    fish_add_path --global $HOMEBREW_PREFIX/opt/coreutils/libexec/gnubin
-end
-
-if type -q ggrep
-    fish_add_path --global $HOMEBREW_PREFIX/opt/grep/libexec/gnubin
-end
-
-if type -q gsed
-    fish_add_path --global $HOMEBREW_PREFIX/opt/gnu-sed/libexec/gnubin
-end
-
-if type -q gawk
-    fish_add_path --global $HOMEBREW_PREFIX/opt/gawk/libexec/gnubin
-end
-
-if type -q gfind
-    fish_add_path --global $HOMEBREW_PREFIX/opt/findutils/libexec/gnubin
-end
-
-if type -q gtar
-    fish_add_path --global $HOMEBREW_PREFIX/opt/gnu-tar/libexec/gnubin
+for tool in coreutils grep gnu-sed gawk findutils gnu-tar
+    set -l gnubin $HOMEBREW_PREFIX/opt/$tool/libexec/gnubin
+    test -d $gnubin && fish_add_path --global $gnubin
 end
 {{- end }}

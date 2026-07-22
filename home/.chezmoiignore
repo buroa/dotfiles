@@ -4,7 +4,8 @@
 # Directories are ignored whole (not just their one file) to avoid leaving empty
 # managed dirs behind.
 
-{{- if ne .machine "darwin" }}
+{{- /* darwin (personal) and darwin-work both get Homebrew. */ -}}
+{{- if not (hasPrefix "darwin" .machine) }}
 .config/homebrew
 .config/fish/conf.d/10-homebrew.fish
 .chezmoiscripts/brew-bundle.sh

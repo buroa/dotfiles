@@ -1,0 +1,7 @@
+{{- $all := merge (deepCopy .brew.common) (index .brew .machine) -}}
+{{ range $name, $kind := $all }}{{ if eq $kind "tap" }}tap "{{ $name }}", trusted: true
+{{ end }}{{ end }}
+{{ range $name, $kind := $all }}{{ if eq $kind "brew" }}brew "{{ $name }}"{{ if contains "/" $name }}, trusted: true{{ end }}
+{{ end }}{{ end }}
+{{ range $name, $kind := $all }}{{ if eq $kind "cask" }}cask "{{ $name }}"{{ if contains "/" $name }}, trusted: true{{ end }}
+{{ end }}{{ end -}}

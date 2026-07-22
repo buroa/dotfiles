@@ -1,4 +1,6 @@
 #!/usr/bin/env bash
-# brewfile hash: {{ include "dot_config/homebrew/brewfile" | sha256sum }}
+# machine: {{ .machine }}
+# brewfile hash: {{ include "dot_config/homebrew/brewfile.tmpl" | sha256sum }}
+# packages hash: {{ include ".chezmoidata/packages.yaml" | sha256sum }}
 set -euo pipefail
 brew bundle --no-upgrade --file="$HOME/.config/homebrew/brewfile"

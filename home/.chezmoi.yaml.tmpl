@@ -1,3 +1,14 @@
-{{- /* machine = os-release id on Linux (fedora, truenas), else the OS name (darwin). */ -}}
+{{- /* machine: os-release id on Linux (fedora, truenas); on macs, darwin (personal) */ -}}
+{{- /* or work. Set once at init and reused thereafter; both macs report os darwin. */ -}}
+{{- $machine := index .chezmoi.osRelease "id" | default .chezmoi.os -}}
+{{- if hasKey . "machine" -}}
+{{-   $machine = .machine -}}
+{{- else if eq $machine "darwin" -}}
+{{-   if promptBool "Work machine" false -}}
+{{-     $machine = "darwin-work" -}}
+{{-   end -}}
+{{- end -}}
 data:
-  machine: {{ index .chezmoi.osRelease "id" | default .chezmoi.os | quote }}
+  machine: {{ $machine | quote }}
+  name: {{ promptStringOnce . "name" "Name" "Steven Kreitzer" | quote }}
+  email: {{ promptStringOnce . "email" "Email" "skre@skre.me" | quote }}

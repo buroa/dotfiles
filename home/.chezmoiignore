@@ -4,7 +4,7 @@
 # Directories are ignored whole (not just their one file) to avoid leaving empty
 # managed dirs behind.
 
-{{- if ne .machine "macos" }}
+{{- if ne .machine "darwin" }}
 .config/homebrew
 .config/fish/conf.d/10-homebrew.fish
 .chezmoiscripts/brew-bundle.sh

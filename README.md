@@ -6,19 +6,20 @@ My dotfiles managed by [Chezmoi](https://www.chezmoi.io/).
 
 | Machine   | Device                | Shell | Packages          |
 | --------- | --------------------- | ----- | ----------------- |
-| `macos`   | Laptop (macOS)        | fish  | Homebrew          |
+| `darwin`  | Laptop (macOS)        | fish  | Homebrew          |
 | `truenas` | NAS (TrueNAS Scale)   | fish  | mise              |
 | `fedora`  | Dev box (Fedora IoT)  | fish  | rpm-ostree + mise |
 
-`chezmoi init` derives the machine from the OS (`darwin` → `macos`, otherwise the
-`/etc/os-release` id, else `other`) and stores it as `machine` in the local
-chezmoi config. No prompt. Everything else keys off that value: `.chezmoiignore`
-selects which files and scripts apply per machine, and `.chezmoidata/packages.yaml`
-supplies the mise tool list. The content files stay free of machine conditionals.
+`chezmoi init` derives the machine from the OS: the `/etc/os-release` id on Linux
+(`fedora`, `truenas`), otherwise the OS name (`darwin` on macOS). It stores this as
+`machine` in the local chezmoi config. No prompt. Everything else keys off that
+value: `.chezmoiignore` selects which files and scripts apply per machine, and
+`.chezmoidata/packages.yaml` supplies the mise tool list. The content files stay
+free of machine conditionals.
 
 ## Bootstrap
 
-### macos
+### darwin
 
 ```sh
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"

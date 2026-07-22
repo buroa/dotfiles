@@ -18,7 +18,6 @@
 
 {{- if ne .machine "truenas" }}
 .zshrc
-.zshenv
 {{- end }}
 
 {{- if eq .machine "truenas" }}

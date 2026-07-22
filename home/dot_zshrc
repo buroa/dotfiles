@@ -1,12 +1,7 @@
 # fish isn't in /etc/shells here (sealed rootfs), so the login shell (zsh) execs
-# into fish for interactive use. `zsh` typed from within fish still gets a real zsh.
+# into fish for interactive use. fish is a mise shim, so put the shims on PATH
+# first to make it findable. `zsh` typed from within fish still gets a real zsh.
+export PATH="$HOME/.local/share/mise/shims:$HOME/.local/bin:$PATH"
 if [[ -z "$ZSH_EXECUTION_STRING" && "$(ps -p $PPID -o comm= 2>/dev/null)" != "fish" ]] && command -v fish >/dev/null; then
     exec fish
 fi
-
-# Fallback setup for when fish is unavailable; mise shims provide these tools.
-export GPG_TTY=$(tty)
-eval "$(mise activate zsh)"
-eval "$(starship init zsh)"
-eval "$(zoxide init zsh)"
-eval "$(atuin init zsh --disable-up-arrow)"

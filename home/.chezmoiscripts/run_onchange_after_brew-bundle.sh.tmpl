@@ -1,5 +1,5 @@
 {{- if eq .machine "macos" -}}
-#!/bin/bash
+#!/usr/bin/env bash
 # brewfile hash: {{ include "dot_config/homebrew/brewfile" | sha256sum }}
 set -euo pipefail
 brew bundle --no-upgrade --file="{{ .chezmoi.homeDir }}/.config/homebrew/brewfile"

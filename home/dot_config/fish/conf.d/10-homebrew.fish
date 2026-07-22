@@ -11,7 +11,7 @@ end
 
 # HOMEBREW_PREFIX is exported, so nested shells inherit it and can skip shellenv
 if not set -q HOMEBREW_PREFIX; and type -q brew
-    eval (brew shellenv)
+    brew shellenv fish | source
 end
 
 fish_add_path --global $HOMEBREW_PREFIX/opt/curl/bin

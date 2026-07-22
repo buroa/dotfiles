@@ -1,4 +1,4 @@
-{{- if ne (includeTemplate "machine" .) "macos" -}}
+{{- if ne .machine "macos" -}}
 #!/bin/bash
 # mise config hash: {{ include "dot_config/mise/config.toml.tmpl" | sha256sum }}
 set -euo pipefail

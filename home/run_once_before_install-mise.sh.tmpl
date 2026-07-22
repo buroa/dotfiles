@@ -1,4 +1,4 @@
-{{- if or (eq (includeTemplate "machine" .) "truenas") (eq (includeTemplate "machine" .) "fedora") -}}
+{{- if or (eq .machine "truenas") (eq .machine "fedora") -}}
 #!/bin/bash
 set -euo pipefail
 # Bootstrap mise before files are applied, so the mise-install hook (run after

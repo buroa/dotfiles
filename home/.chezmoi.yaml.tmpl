@@ -1,0 +1,10 @@
+{{- $machine := "other" -}}
+{{- if eq .chezmoi.os "darwin" -}}
+{{-   $machine = "macos" -}}
+{{- else if eq .chezmoi.os "linux" -}}
+{{-   $machine = index .chezmoi.osRelease "id" | default "other" -}}
+{{- end -}}
+data:
+  machine: {{ $machine | quote }}
+  name: "Steven Kreitzer"
+  email: "skre@skre.me"

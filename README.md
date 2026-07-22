@@ -10,9 +10,11 @@ My dotfiles managed by [Chezmoi](https://www.chezmoi.io/).
 | `truenas` | NAS (TrueNAS Scale)   | fish  | mise              |
 | `fedora`  | Dev box (Fedora IoT)  | fish  | rpm-ostree + mise |
 
-`chezmoi init` prompts once for the machine (with a sensible default detected
-from the environment) and everything else derives from that answer: the shell
-config to lay down, the mise tool list, and the package hooks.
+`chezmoi init` derives the machine from the OS (`darwin` → `macos`, otherwise the
+`/etc/os-release` id, else `other`) and stores it as `machine` in the local
+chezmoi config. No prompt. Everything else keys off that value: `.chezmoiignore`
+selects which files and scripts apply per machine, and `.chezmoidata/packages.yaml`
+supplies the mise tool list. The content files stay free of machine conditionals.
 
 ## Bootstrap
 
@@ -134,9 +136,9 @@ manages chezmoi going forward (it is in the fedora tool list):
 sh -c "$(curl -fsSL get.chezmoi.io)" -- -b "$HOME/.local/bin" init --apply buroa/dotfiles
 ```
 
-Pick `fedora` at the machine prompt (it is the default on Fedora). The
-mise-install hook installs the declared tools into `~/.local`; nothing else is
-layered onto the OS image. Re-run `chezmoi apply` after pulling changes.
+The machine resolves to `fedora` from `/etc/os-release`. The mise-install hook
+installs the declared tools into `~/.local`; nothing else is layered onto the OS
+image. Re-run `chezmoi apply` after pulling changes.
 
 ### Fish plugins
 
@@ -146,9 +148,11 @@ hook bootstraps [fisher](https://github.com/jorgebucaran/fisher) and re-runs
 
 ## Notes
 
-- The machine answer is stored in the local chezmoi config
-  (`~/.config/chezmoi/chezmoi.yaml`), not in this repo. To change it later,
-  remove the `machine` entry from that file and re-run `chezmoi init`.
+- The machine is derived from the OS at `chezmoi init` and stored as `machine` in
+  the local chezmoi config (`~/.config/chezmoi/chezmoi.yaml`), not in this repo.
+  Because that value lives in the config, run `chezmoi init` once after pulling
+  changes that touch machine detection so the config regenerates before `apply`.
+  To override on an unusual host, edit `machine` in that file and re-apply.
 - `~/.claude/CLAUDE.md` and `~/.codex/AGENTS.md` are symlinks to
   `~/.config/agents/AGENTS.md`, so Claude Code and Codex share one set of
   global agent instructions.

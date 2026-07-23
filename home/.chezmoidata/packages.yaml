@@ -75,7 +75,6 @@ brew:
     openssh: brew
     oxfmt: brew
     pre-commit: brew
-    prettier: brew
     python: brew
     ripgrep: brew
     sd: brew
@@ -116,6 +115,15 @@ brew:
     vlc: cask
     wifiman: cask
     wireshark-app: cask
+    anthropic.claude-code: vscode
+    davidanson.vscode-markdownlint: vscode
+    editorconfig.editorconfig: vscode
+    golang.go: vscode
+    nefrob.vscode-just-syntax: vscode
+    oxc.oxc-vscode: vscode
+    pkief.material-icon-theme: vscode
+    redhat.vscode-yaml: vscode
+    wayou.vscode-todo-highlight: vscode
   darwin-work:
     openconnect: brew
     slack: cask

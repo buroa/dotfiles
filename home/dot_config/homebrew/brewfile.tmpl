@@ -4,4 +4,6 @@
 {{ range $name, $kind := $all }}{{ if eq $kind "brew" }}brew "{{ $name }}"{{ if contains "/" $name }}, trusted: true{{ end }}
 {{ end }}{{ end }}
 {{ range $name, $kind := $all }}{{ if eq $kind "cask" }}cask "{{ $name }}"{{ if contains "/" $name }}, trusted: true{{ end }}
+{{ end }}{{ end }}
+{{ range $name, $kind := $all }}{{ if eq $kind "vscode" }}vscode "{{ $name }}"
 {{ end }}{{ end -}}

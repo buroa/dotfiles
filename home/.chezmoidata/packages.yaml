@@ -1,36 +1,4 @@
-mise:
-  common:
-    atuin: latest
-    bat: latest
-    fd: latest
-    lsd: latest
-    neovim: latest
-    ripgrep: latest
-    sd: latest
-    yq: latest
-    zoxide: latest
-  truenas:
-    starship: latest
-    "aqua:fish-shell/fish-shell": latest
-    "aqua:autobrr/mkbrr": latest
-    "github:autobrr/go-mediainfo": latest
-  fedora:
-    aws-cli: latest
-    azure-cli: latest
-    claude: latest
-    codex: latest
-    gh: latest
-    go: latest
-    node: latest
-    npm: latest
-    python: latest
-    "github:dolthub/dolt": latest
-    "github:gastownhall/beads": latest
-    "github:gastownhall/gascity": latest
-
-# Homebrew (darwin/work), keyed by .machine exactly like mise. Each entry maps a
-# name to its kind (tap/brew/cask); trusted taps/entries are detected by the "/"
-# in their tap-qualified name.
+---
 brew:
   common:
     fluxcd/tap: tap
@@ -43,17 +11,20 @@ brew:
     azure-cli: brew
     bash: brew
     bat: brew
+    btop: brew
     chezmoi: brew
     cloudflared: brew
     colima: brew
     coreutils: brew
     cosign: brew
     curl: brew
+    cursor: brew
     direnv: brew
     docker-buildx: brew
     docker-compose: brew
     doggo: brew
     dolt: brew
+    dust: brew
     fd: brew
     ffmpeg: brew
     findutils: brew
@@ -67,6 +38,7 @@ brew:
     gettext: brew
     gh: brew
     git: brew
+    git-delta: brew
     git-lfs: brew
     gnu-getopt: brew
     gnu-indent: brew
@@ -77,7 +49,6 @@ brew:
     gum: brew
     helm: brew
     helmfile: brew
-    htop: brew
     jo: brew
     jq: brew
     just: brew
@@ -142,10 +113,42 @@ brew:
     lunar: cask
     postman: cask
     shottr: cask
-    visual-studio-code: cask
     vlc: cask
     wifiman: cask
     wireshark-app: cask
   darwin-work:
     openconnect: brew
     slack: cask
+
+mise:
+  common:
+    atuin: latest
+    bat: latest
+    btop: latest
+    delta: latest
+    dust: latest
+    fd: latest
+    lsd: latest
+    neovim: latest
+    ripgrep: latest
+    sd: latest
+    yq: latest
+    zoxide: latest
+  fedora:
+    aws-cli: latest
+    azure-cli: latest
+    claude: latest
+    codex: latest
+    gh: latest
+    go: latest
+    node: latest
+    npm: latest
+    python: latest
+    "github:dolthub/dolt": latest
+    "github:gastownhall/beads": latest
+    "github:gastownhall/gascity": latest
+  truenas:
+    starship: latest
+    "aqua:fish-shell/fish-shell": latest
+    "aqua:autobrr/mkbrr": latest
+    "github:autobrr/go-mediainfo": latest

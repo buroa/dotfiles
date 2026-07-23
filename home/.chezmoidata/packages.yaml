@@ -18,7 +18,7 @@ brew:
     coreutils: brew
     cosign: brew
     curl: brew
-    cursor: brew
+    cursor: cask
     direnv: brew
     docker-buildx: brew
     docker-compose: brew

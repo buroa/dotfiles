@@ -86,10 +86,13 @@ layered packages, permissive SELinux, and the disabled firewall):
 sudo curl -fsSL https://github.com/terrapkg/subatomic-repos/raw/main/terra.repo \
   | sudo tee /etc/yum.repos.d/terra.repo
 sudo rpm-ostree install --idempotent terra-release
-# libatomic: runtime dep for the mise-managed node build (not in the base image)
-# systemd-networkd: not in Fedora IoT's base image; layered for step 2 below
 sudo rpm-ostree install --idempotent --assumeyes \
-  fish git mise starship libatomic systemd-networkd
+  atuin autoconf automake bat bind-utils binutils btop \
+  chezmoi du-dust fd-find fish fzf gcc gcc-c++ \
+  gh git git-delta htop libatomic libtool lsd \
+  lsof make mise moreutils net-tools netcat nmap \
+  patch pciutils ripgrep spacer starship systemd-networkd tcpdump \
+  tree wget which yq zoxide
 
 # Permissive SELinux + no host firewall (dev box)
 sudo sed -i 's/SELINUX=enforcing/SELINUX=permissive/g' /etc/selinux/config

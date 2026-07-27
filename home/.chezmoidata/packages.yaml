@@ -139,7 +139,6 @@ mise:
     dust: latest
     fd: latest
     lsd: latest
-    mtr: latest
     neovim: latest
     ripgrep: latest
     sd: latest

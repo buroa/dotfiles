@@ -131,25 +131,13 @@ brew:
 
 mise:
   common:
-    atuin: latest
-    bat: latest
-    btop: latest
-    delta: latest
     doggo: latest
-    dust: latest
-    fd: latest
-    lsd: latest
-    neovim: latest
-    ripgrep: latest
     sd: latest
-    yq: latest
-    zoxide: latest
   fedora:
     aws-cli: latest
     azure-cli: latest
     claude: latest
     codex: latest
-    gh: latest
     go: latest
     node: latest
     npm: latest
@@ -158,7 +146,16 @@ mise:
     "github:gastownhall/beads": latest
     "github:gastownhall/gascity": latest
   truenas:
+    atuin: latest
+    bat: latest
+    btop: latest
+    fd: latest
+    lsd: latest
+    neovim: latest
+    ripgrep: latest
     starship: latest
+    zoxide: latest
+    yq: latest
     "aqua:fish-shell/fish-shell": latest
     "aqua:autobrr/mkbrr": latest
     "github:autobrr/go-mediainfo": latest

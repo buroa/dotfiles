@@ -135,9 +135,11 @@ mise:
     bat: latest
     btop: latest
     delta: latest
+    doggo: latest
     dust: latest
     fd: latest
     lsd: latest
+    mtr: latest
     neovim: latest
     ripgrep: latest
     sd: latest

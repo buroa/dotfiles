@@ -1,7 +1,5 @@
 if type -q mise
-    if test "$VSCODE_RESOLVING_ENVIRONMENT" = 1
-        mise activate fish --shims | source
-    else if status is-interactive
+    if status is-interactive; and test "$VSCODE_RESOLVING_ENVIRONMENT" != 1
         mise activate fish | source
     else
         mise activate fish --shims | source

@@ -9,4 +9,4 @@ set -gx LANG en_US.utf-8
 fish_add_path --global $HOME/.local/bin
 fish_add_path --global $HOME/.cargo/bin
 fish_add_path --global $HOME/.krew/bin
-fish_add_path --global $HOME/.go/bin
+fish_add_path --global $GOPATH/bin

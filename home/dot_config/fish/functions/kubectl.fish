@@ -1,5 +1,5 @@
 function kubectl --wraps=kubectl
-    if type -q kubecolor
+    if command -q kubecolor
         command kubecolor $argv
     else
         command kubectl $argv

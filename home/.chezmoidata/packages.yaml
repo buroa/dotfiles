@@ -143,8 +143,8 @@ mise:
     npm: latest
     python: latest
     "github:dolthub/dolt": latest
-    "github:gastownhall/beads": latest
-    "github:gastownhall/gascity": latest
+    "github:gastownhall/beads": 1.1.0
+    "github:gastownhall/gascity": 1.4.0
   truenas:
     atuin: latest
     bat: latest

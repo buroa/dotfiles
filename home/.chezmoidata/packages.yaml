@@ -3,6 +3,7 @@ brew:
   common:
     fluxcd/tap: tap
     home-operations/tap: tap
+    stablyai/orca: tap
     lance0/tap: tap
     actionlint: brew
     asciinema: brew
@@ -74,6 +75,7 @@ brew:
     nmap: brew
     node: brew
     openssh: brew
+    stablyai/orca/orca: cask
     oxfmt: brew
     pre-commit: brew
     python: brew
@@ -143,8 +145,8 @@ mise:
     npm: latest
     python: latest
     "github:dolthub/dolt": latest
-    "github:gastownhall/beads": 1.1.0
-    "github:gastownhall/gascity": 1.4.0
+    "github:gastownhall/beads": 1.2.2
+    "github:gastownhall/gascity": 1.4.1
   truenas:
     atuin: latest
     bat: latest

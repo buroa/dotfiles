@@ -17,6 +17,10 @@
 .chezmoiscripts/mise-install.sh
 {{- end }}
 
+{{- if ne .machine "darwin" }}
+.config/zed
+{{- end }}
+
 {{- if ne .machine "truenas" }}
 .zshrc
 {{- end }}

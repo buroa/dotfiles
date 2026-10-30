@@ -1,0 +1,27 @@
+{
+  "agent_servers": {
+    "claude-acp": {
+      "type": "registry"
+    },
+    "codex-acp": {
+      "type": "registry"
+    }
+  },
+  "auto_install_extensions": {
+    "json5": true,
+    "just": true,
+    "material-icon-theme": true
+  },
+  "base_keymap": "VSCode",
+  "buffer_font_family": "FiraCode Nerd Font",
+  "buffer_font_size": 14,
+  "colorize_brackets": true,
+  "hover_popover_delay": 1500,
+  "icon_theme": "Material Icon Theme",
+  "theme": {
+    "mode": "system",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  },
+  "ui_font_size": 16
+}

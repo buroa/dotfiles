@@ -8,7 +8,6 @@ brew:
     asciinema: brew
     atuin: brew
     awscli: brew
-    azure-cli: brew
     bash: brew
     bat: brew
     btop: brew

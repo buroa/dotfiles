@@ -3,7 +3,6 @@ brew:
   common:
     fluxcd/tap: tap
     home-operations/tap: tap
-    stablyai/orca: tap
     lance0/tap: tap
     actionlint: brew
     asciinema: brew
@@ -71,7 +70,6 @@ brew:
     nmap: brew
     node: brew
     openssh: brew
-    stablyai/orca/orca: cask
     oxfmt: brew
     pre-commit: brew
     python: brew
